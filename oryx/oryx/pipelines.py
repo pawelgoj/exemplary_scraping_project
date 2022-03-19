@@ -7,13 +7,16 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 import sqlite3
+import pickle
 
 class OryxPipeline:
     def __init__(self):
+        with open('name.p', 'rb') as file:
+            self.name = pickle.load(file)
         self.create_connection() 
     
     def create_connection(self):
-        self.conn = sqlite3.connect("myquotes.db")
+        self.conn = sqlite3.connect(self.name + ".db")
         self.curr = self.conn.cursor()
     
     def process_item(self, item, spider):
