@@ -1,6 +1,5 @@
 import logging
 import sqlite3
-import logging
 import pickle
 import os
 
