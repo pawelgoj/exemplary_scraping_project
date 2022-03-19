@@ -15,6 +15,7 @@ class DataToProcesing():
         'Helicopters': 'Helicopters',
         'Naval Ships': 'Naval Ships',
         'Aircraft': 'Aircraft',
+        'UAV': 'Unmanned Aerial Vehicles',
         'Artillery': ('Towed Artillery', 'Heavy Mortars', 'Self-Propelled Artillery'),
         'Armoured Personnel Carriers': ('Armoured Personnel Carriers', 'Infantry Mobility Vehicles', 
                                         'Infantry Fighting Vehicles', 'Armoured Fighting Vehicles'),
@@ -74,12 +75,12 @@ class ProcessDataMultiple:
                 number = 0
                 
                 if type(items) == type(''):
-                    items = '%' + items + '%'
+                    items = items + '%'
                     number = self._propcess_data.get_information(self._date, country, items)
                     
                 else:
                     for item in items:
-                        item = '%' + item + '%'
+                        item = item + '%'
                         quantity = self._propcess_data.get_information(self._date, country, item)
                         number += quantity
                         
@@ -108,12 +109,14 @@ class ProcessData:
             self.curr = self.conn.cursor()
         
     def get_information(self, data: str = '2022-03-17', countr: str = 'Russia', staf: str = '%Tanks%'):
+        staf = staf + '%'
         var = self.curr.execute("""SELECT content
                             FROM quotes_tb
-                            WHERE country = ? AND data = ? AND staf LIKE  ?
+                            WHERE country = ? AND data = ? AND staf LIKE ? and length(staf) <= length(?) + 1
                           """,
                           (countr, 
                            data,
+                           staf,
                            staf
                            ))  
         
