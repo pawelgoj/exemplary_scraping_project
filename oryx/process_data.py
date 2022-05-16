@@ -21,9 +21,9 @@ class DataToProcesing():
                                         'Infantry Fighting Vehicles', 'Armoured Fighting Vehicles'),
         'Logistics Trains': 'Logistics Trains',
         'Vehicles': ('Trucks, Vehicles and Jeeps', 'Jammers And Deception Systems', 
-                     'Engineering Vehicles','Mine-Resistant Ambush Protected'),
+                     'Engineering Vehicles', 'Mine-Resistant Ambush Protected'),
         'Radars': 'Radars',
-        'Communications Stations': 'Communications Stations',
+        'Communications Stations': ('Communications Stations', 'Radars And Communications Equipment ', 'Command Posts And Communications Stations'),
         'Rocket Launchers': ('Multiple Rocket Launchers', 'Surface-To-Air Missile Systems'),
         'Anti-Aircraft': ('Anti-Aircraft Guns', 'Self-Propelled Anti-Aircraft Guns')
     }

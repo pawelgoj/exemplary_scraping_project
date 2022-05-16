@@ -12,7 +12,8 @@ def extract_staf_type(item):
 
 class Oryx(scrapy.Spider):
     name ='oryx'
-    start_urls = ['https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html']
+    start_urls = ['https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html', 
+                  'https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html']
     
     def parse(self, response):
         data = datetime.date.today()
