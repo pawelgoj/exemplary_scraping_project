@@ -24,7 +24,7 @@ class DataToProcesing():
                      'Engineering Vehicles', 'Mine-Resistant Ambush Protected'),
         'Radars': 'Radars',
         'Communications Stations': ('Communications Stations', 'Radars And Communications Equipment ', 'Command Posts And Communications Stations'),
-        'Rocket Launchers': ('Multiple Rocket Launchers', 'Surface-To-Air Missile Systems'),
+        'Rocket Launchers': ('Multiple Rocket Launchers', 'Surface-To-Air Missile Systems', 'Self-Propelled Anti-Tank Missile Systems'),
         'Anti-Aircraft': ('Anti-Aircraft Guns', 'Self-Propelled Anti-Aircraft Guns')
     }
     
